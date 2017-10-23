@@ -1,4 +1,8 @@
+# Config file
+unifi-portal.yml
+
 # Binaries for programs and plugins
+unifi-captive-portal*
 *.exe
 *.dll
 *.so

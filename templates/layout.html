@@ -1,0 +1,26 @@
+{{ define "head" }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" class="ui" href="/assets/css/semantic.min.css">
+    <style>
+      body .main {
+        margin-top: 20px;
+      }
+    </style>
+
+    <title>{{ .Title }}</title>
+  </head>
+  <body>
+    <div class="ui main text container">
+{{ end }}
+
+{{ define "tail" }}
+    </div>
+  </body>
+</html>
+{{end}}

@@ -1,0 +1,35 @@
+{{ define "form" }}
+<p>{{ .Intro }}</p>
+<form class="ui form {{if .Errors}}error{{end}}" action="/form" method="post">
+  <div class="required field {{if .Errors.email}}error{{end}}">
+    <label>Email</label>
+    <input type="text" name="email" placeholder="Email" value="{{.FormEmail}}">
+  </div>
+  <div class="required field {{if .Errors.tos}}error{{end}}">
+    <div class="ui checkbox">
+      <input type="checkbox" name="tos" {{if .FormTOS}}checked{{end}}>
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div>
+  <div class="field">
+    <textarea readonly="">{{ .TOS }}</textarea>
+  </div>
+
+  <input type="hidden" name="id" value="{{ .ID }}">
+  <input type="hidden" name="ap" value="{{ .AP }}">
+  <input type="hidden" name="ssid" value="{{ .SSID }}">
+  <input type="hidden" name="url" value="{{ .URL }}">
+
+  <button class="ui button" type="submit">Submit</button>
+
+  {{if .Errors}}
+  <div class="ui error message">
+    <ul class="list">
+      {{range $key, $value := .Errors}}
+      <li>{{$value}}</li>
+      {{end}}
+    <ul>
+  </div>
+  {{end}}
+</form>
+{{ end }}

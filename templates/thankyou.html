@@ -1,0 +1,19 @@
+{{ define "thankYouPage" }}
+
+{{ template "head" . }}
+<h1 class="ui header">{{ .Title }}</h1>
+<div class="ui segment">
+  <div class="ui active inverted dimmer">
+    <div class="ui indeterminate text loader">Almost there. Connecting...</div>
+  </div>
+  <p style="height: 66px;"></p>
+</div>
+<script>
+window.setTimeout(function(){
+  window.location.href = "{{ .URL }}";
+}, 15000);
+</script>
+{{ template "tail" . }}
+
+{{ end }}
+
