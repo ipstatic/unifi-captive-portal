@@ -3,7 +3,7 @@
 <form class="ui form {{if .Errors}}error{{end}}" action="/form" method="post">
   <div class="required field {{if .Errors.email}}error{{end}}">
     <label>Email</label>
-    <input type="text" name="email" placeholder="Email" value="{{.FormEmail}}">
+    <input type="email" name="email" placeholder="Email" value="{{.FormEmail}}">
   </div>
   <div class="required field {{if .Errors.tos}}error{{end}}">
     <div class="ui checkbox">
